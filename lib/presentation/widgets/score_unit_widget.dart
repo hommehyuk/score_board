@@ -7,12 +7,9 @@ class ScoreUnitWidget extends StatelessWidget {
   final int varianceUnit;
   final Color backgroundColor;
 
-  const ScoreUnitWidget({
-    required this.playerType,
-    required this.varianceUnit,
-    required this.backgroundColor,
-    super.key,
-  });
+  const ScoreUnitWidget(
+      this.playerType, this.varianceUnit, this.backgroundColor,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,31 +18,38 @@ class ScoreUnitWidget extends StatelessWidget {
     var textStyle = const TextStyle(color: Colors.white);
 
     return Container(
-      child: Column(
+      color: backgroundColor,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: FittedBox(
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  '+',
-                  style: textStyle,
+          Column(
+            children: [
+              Expanded(
+                child: FittedBox(
+                  child: TextButton(
+                    child: Text('+', style: textStyle),
+                    onPressed: () => controllerProvider.changePlayerScore(
+                        playerType, varianceUnit),
+                  ),
                 ),
               ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: FittedBox(child: Text('$varianceUnit', style: textStyle)),
-          ),
-          Expanded(
-            flex: 1,
-            child: FittedBox(
-              child: TextButton(
-                onPressed: () {},
-                child: Text('-', style: textStyle),
+              Expanded(
+                child: FittedBox(
+                  child: Text(
+                      '${controllerProvider.getPlayerScore(playerType)}',
+                      style: textStyle),
+                ),
               ),
-            ),
+              Expanded(
+                child: FittedBox(
+                  child: TextButton(
+                    child: Text('-', style: textStyle),
+                    onPressed: () => controllerProvider.changePlayerScore(
+                        playerType, -1 * varianceUnit),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
