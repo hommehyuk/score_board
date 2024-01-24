@@ -5,10 +5,7 @@ import 'package:score_board_app/presentation/widgets/score_unit_widget.dart';
 class ScoreWidget extends StatelessWidget {
   final PlayerType playerType;
 
-  const ScoreWidget({
-    required this.playerType,
-    super.key,
-  });
+  const ScoreWidget(this.playerType);
 
   @override
   Widget build(BuildContext context) {
