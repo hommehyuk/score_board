@@ -11,6 +11,11 @@ class MainScreen extends StatelessWidget {
           child: Text('ScoreBoard'),
         ),
       ),
+      body: SingleChildScrollView(
+        child: Row(
+          children: [],
+        ),
+      ),
     );
   }
 }
