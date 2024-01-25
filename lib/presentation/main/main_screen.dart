@@ -35,7 +35,7 @@ class MainScreen extends StatelessWidget {
                   children: <Widget>[
                     const Expanded(
                         flex: 1, child: ScoreWidget(PlayerType.blue)),
-                    const Expanded(flex: 2, child: PlayerInfo(PlayerType.blue)),
+                    const Expanded(flex: 2, child: PlayerWidget(PlayerType.blue)),
                     Expanded(
                       flex: 2,
                       child: Text(
