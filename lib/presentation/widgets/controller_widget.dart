@@ -13,9 +13,9 @@ class ControllerProvider extends ChangeNotifier {
 
   List<PlayerData> get playerDataList => _playerDataList;
 
-  final double _remainingTimeInMs = DEFAULT_TIME;
+  double _remainingTime = DEFAULT_TIME;
 
-  double get remainingTimeInMs => _remainingTimeInMs;
+  double get remainingTime => _remainingTime;
 
   void changePlayerScore(PlayerType playerType, int scoreVariance) {
     _playerDataList[playerType.index].score += scoreVariance;
@@ -33,15 +33,18 @@ class ControllerProvider extends ChangeNotifier {
     } else {
       _playerDataList[playerType.index].set += pointVariance;
     }
-
     notifyListeners();
   }
 
-  int getPlayerSetScore(PlayerType playerType, SetScoreType setScoreType) {
-    if (setScoreType == SetScoreType.set) {
+  int getPlayerSetScore(PlayerType playerType, SetScoreType setScore) {
+    if (setScore == SetScoreType.set) {
       return _playerDataList[playerType.index].set;
     }
-
     return _playerDataList[playerType.index].set;
+  }
+
+  void setRemainingTime(double time) {
+    _remainingTime = time;
+    notifyListeners();
   }
 }
