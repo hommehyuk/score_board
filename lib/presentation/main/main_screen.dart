@@ -20,9 +20,9 @@ class MainScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.of(context).size.height - 55,
-          child: Column(
+          child: const Column(
             children: [
-              const Expanded(
+              Expanded(
                 flex: 1,
                 child: Row(children: <Widget>[
                   Expanded(child: Text('control')),
@@ -33,16 +33,10 @@ class MainScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Expanded(
-                        flex: 1, child: ScoreWidget(PlayerType.blue)),
-                    const Expanded(
-                        flex: 2, child: PlayerWidget(PlayerType.blue)),
-                    Expanded(
-                      flex: 2,
-                      child: Text(
-                          '${controllerProvider.getPlayerScore(PlayerType.red)}'),
-                    ),
-                    const Expanded(flex: 1, child: ScoreWidget(PlayerType.red)),
+                    Expanded(flex: 1, child: ScoreWidget(PlayerType.blue)),
+                    Expanded(flex: 2, child: PlayerWidget(PlayerType.blue)),
+                    Expanded(flex: 2, child: PlayerWidget(PlayerType.red)),
+                    Expanded(flex: 1, child: ScoreWidget(PlayerType.red)),
                   ],
                 ),
               ),
