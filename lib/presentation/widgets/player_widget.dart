@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:score_board_app/presentation/widgets/controller_widget.dart';
+import 'package:score_board_app/presentation/widgets/set_score.dart';
 
 class PlayerWidget extends StatelessWidget {
   final PlayerType playerType;
@@ -38,12 +39,13 @@ class PlayerWidget extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Text(
-              '${controllerProvider.getPlayerScore(this.playerType)}',
+              '${controllerProvider.getPlayerScore(playerType)}',
               style: textStyle
                   .merge(TextStyle(fontSize: dynamicFontSizeCriterion * 0.1)),
             ),
           ),
-          const Expanded(flex: 2, child: Text('c')),
+          Expanded(flex: 2, child: SetScore(playerType, SetScoreType.set)),
+          const Spacer(),
         ],
       ),
     );

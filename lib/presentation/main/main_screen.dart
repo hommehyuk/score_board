@@ -18,7 +18,7 @@ class MainScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height - 55,
           child: Column(
             children: [
@@ -35,7 +35,8 @@ class MainScreen extends StatelessWidget {
                   children: <Widget>[
                     const Expanded(
                         flex: 1, child: ScoreWidget(PlayerType.blue)),
-                    const Expanded(flex: 2, child: PlayerWidget(PlayerType.blue)),
+                    const Expanded(
+                        flex: 2, child: PlayerWidget(PlayerType.blue)),
                     Expanded(
                       flex: 2,
                       child: Text(
