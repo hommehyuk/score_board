@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:score_board_app/presentation/widgets/controller_widget.dart';
+import 'package:score_board_app/presentation/widgets/player_controller.dart';
 
 class SetScore extends StatelessWidget {
   final PlayerType playerType;
@@ -10,11 +10,12 @@ class SetScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controllerProvider = Provider.of<ControllerProvider>(context);
+    final controllerProvider = Provider.of<PlayerController>(context);
 
     var textStyle = const TextStyle(color: Colors.white);
 
-    String setScoreDisplay = (setScoreType == SetScoreType) ? 'Set' : 'Set';
+    String setScoreDisplay =
+        (setScoreType == SetScoreType.set) ? 'Set' : 'Set';
     return Column(
       children: [
         Expanded(

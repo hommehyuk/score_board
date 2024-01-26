@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:score_board_app/presentation/main/main_screen.dart';
-import 'package:score_board_app/presentation/widgets/controller_widget.dart';
+import 'package:score_board_app/presentation/widgets/player_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,13 +16,10 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => ControllerProvider()),
-      ],
+    return ChangeNotifierProvider(
+      create: (context) => PlayerController(),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(

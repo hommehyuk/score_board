@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:score_board_app/presentation/widgets/controller_widget.dart';
+import 'package:score_board_app/presentation/widgets/player_controller.dart';
 import 'package:score_board_app/presentation/widgets/set_score.dart';
 
 class PlayerWidget extends StatelessWidget {
@@ -10,7 +10,7 @@ class PlayerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controllerProvider = Provider.of<ControllerProvider>(context);
+    final playerController = Provider.of<PlayerController>(context);
 
     double dynamicFontSizeCriterion = MediaQuery.of(context).size.height;
     var textStyle = const TextStyle(color: Colors.white);
@@ -29,6 +29,8 @@ class PlayerWidget extends StatelessWidget {
           Expanded(
             flex: 1,
             child: TextField(
+              controller:
+                  playerController.getPlayerTextEditingController(playerType),
               style: textStyle
                   .merge(TextStyle(fontSize: dynamicFontSizeCriterion * 0.035)),
               textAlign: TextAlign.center,
@@ -39,7 +41,7 @@ class PlayerWidget extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Text(
-              '${controllerProvider.getPlayerScore(playerType)}',
+              '${playerController.getPlayerScore(playerType)}',
               style: textStyle
                   .merge(TextStyle(fontSize: dynamicFontSizeCriterion * 0.1)),
             ),

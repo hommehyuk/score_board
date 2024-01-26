@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:score_board_app/presentation/widgets/controller_widget.dart';
+import 'package:score_board_app/presentation/widgets/player_controller.dart';
 import 'package:score_board_app/presentation/widgets/score_unit_widget.dart';
 
 class ScoreWidget extends StatelessWidget {
