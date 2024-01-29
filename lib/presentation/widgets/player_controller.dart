@@ -9,6 +9,8 @@ class PlayerProvider extends ChangeNotifier {
   final List<PlayerData> _playerDataList =
       List.generate(PlayerType.values.length, (index) => PlayerData(0, 0));
 
+  List<PlayerData> get playerDataList => _playerDataList;
+
   void changePlayerScore(PlayerType playerType, int scoreVariance) {
     _playerDataList[playerType.index].score += scoreVariance;
     notifyListeners();
@@ -45,7 +47,6 @@ class PlayerProvider extends ChangeNotifier {
       _playerDataList[i].set = 0;
       _playerDataList[i].textEditingController.clear();
     }
-
     notifyListeners();
   }
 }

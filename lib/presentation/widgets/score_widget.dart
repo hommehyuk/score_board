@@ -15,13 +15,13 @@ class ScoreWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: ScoreUnitWidget(playerType, 3, Colors.black54),
+            child: ScoreUnitWidget(this.playerType, 3, Colors.black54),
           ),
           Expanded(
-            child: ScoreUnitWidget(playerType, 2, Colors.black45),
+            child: ScoreUnitWidget(this.playerType, 2, Colors.black45),
           ),
           Expanded(
-            child: ScoreUnitWidget(playerType, 1, Colors.black38),
+            child: ScoreUnitWidget(this.playerType, 1, Colors.black38),
           ),
         ],
       ),

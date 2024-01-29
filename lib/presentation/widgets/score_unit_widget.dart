@@ -15,9 +15,7 @@ class ScoreUnitWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controllerProvider = Provider.of<PlayerProvider>(context);
-
-    var textStyle = const TextStyle(color: Colors.white);
+    PlayerProvider c = Provider.of<PlayerProvider>(context);
 
     return Container(
       color: backgroundColor,
@@ -29,25 +27,27 @@ class ScoreUnitWidget extends StatelessWidget {
               Expanded(
                 child: FittedBox(
                   child: TextButton(
-                    child: Text('+', style: textStyle),
-                    onPressed: () => controllerProvider.changePlayerScore(
-                        playerType, varianceUnit),
+                    child: const Text(
+                      '+',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () =>
+                        c.changePlayerScore(playerType, varianceUnit),
                   ),
                 ),
               ),
               Expanded(
-                child: FittedBox(
-                  child: Text(
-                      '${controllerProvider.getPlayerScore(playerType)}',
-                      style: textStyle),
-                ),
+                child: FittedBox(child: Text('${varianceUnit}')),
               ),
               Expanded(
                 child: FittedBox(
                   child: TextButton(
-                    child: Text('-', style: textStyle),
-                    onPressed: () => controllerProvider.changePlayerScore(
-                        playerType, -1 * varianceUnit),
+                    child: const Text(
+                      '-',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () =>
+                        c.changePlayerScore(playerType, -varianceUnit),
                   ),
                 ),
               ),

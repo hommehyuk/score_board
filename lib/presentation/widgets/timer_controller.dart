@@ -6,13 +6,14 @@ const int DEFAULT_TIME_IN_MS = 15 * 60 * 1000;
 
 class TimerProvider with ChangeNotifier {
   int _remainingTimeInMs = DEFAULT_TIME_IN_MS;
+  bool _isOngoing = false;
   Timer? _timer;
 
   int get remainingMinutes => (_remainingTimeInMs / 1000) ~/ 60;
 
   int get remainingSeconds => (_remainingTimeInMs ~/ 1000) % 60;
 
-  bool get isOngoing => _timer != null && _timer!.isActive;
+  bool get isOngoing => _isOngoing;
 
   void changeRemainingTime(int timeVarianceInMs) {
     _remainingTimeInMs += timeVarianceInMs;
@@ -20,6 +21,8 @@ class TimerProvider with ChangeNotifier {
   }
 
   void startTimer() {
+    _isOngoing = true;
+    _timer?.cancel();
     _timer = Timer.periodic(Duration(milliseconds: 100), (timer) {
       _remainingTimeInMs -= 100;
       notifyListeners();
@@ -32,12 +35,13 @@ class TimerProvider with ChangeNotifier {
   }
 
   void stopTimer() {
+    _isOngoing = false;
     _timer?.cancel();
-    _timer = null;
     notifyListeners();
   }
 
   void resetData() {
+    _isOngoing = false;
     _remainingTimeInMs = DEFAULT_TIME_IN_MS;
     stopTimer();
     notifyListeners();
