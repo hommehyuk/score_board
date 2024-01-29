@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-const int DEFAULT_TIME_IN_MS = 6 * 60 * 1000;
+const int DEFAULT_TIME_IN_MS = 15 * 60 * 1000;
 
 class TimerProvider with ChangeNotifier {
   int _remainingTimeInMs = DEFAULT_TIME_IN_MS;

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:score_board_app/presentation/widgets/play_or_pause_button.dart';
+import 'package:score_board_app/presentation/widgets/player_controller.dart';
 import 'package:score_board_app/presentation/widgets/timer_controller.dart';
 
 class ControlSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TimerProvider timerProvider = Provider.of<TimerProvider>(context);
+    PlayerProvider playerProvider = Provider.of<PlayerProvider>(context);
 
     return Container(
       color: Colors.white,
@@ -17,8 +20,11 @@ class ControlSection extends StatelessWidget {
             child: FittedBox(
               child: IconButton(
                 icon: const Icon(Icons.refresh),
+                padding: EdgeInsets.zero,
+                iconSize: 35,
                 onPressed: () {
                   timerProvider.resetData();
+                  playerProvider.resetData();
                 },
               ),
             ),
@@ -54,11 +60,7 @@ class ControlSection extends StatelessWidget {
           Expanded(
             flex: 1,
             child: FittedBox(
-              child: IconButton(
-                icon: const Icon(Icons.play_circle_outline),
-                onPressed: () =>
-                    timerProvider.startTimer(), // Handle timer start
-              ),
+              child: PlayOrPauseButton(),
             ),
           ),
           Spacer(flex: 3),
