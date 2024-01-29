@@ -10,7 +10,7 @@ class SetScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controllerProvider = Provider.of<PlayerController>(context);
+    final controllerProvider = Provider.of<PlayerProvider>(context);
 
     var textStyle = const TextStyle(color: Colors.white);
 

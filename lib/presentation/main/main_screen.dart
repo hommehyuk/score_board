@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:score_board_app/presentation/widgets/control_section.dart';
 import 'package:score_board_app/presentation/widgets/player_controller.dart';
 import 'package:score_board_app/presentation/widgets/player_widget.dart';
@@ -19,7 +18,7 @@ class MainScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.of(context).size.height - 55,
-          child: const Column(
+          child: Column(
             children: [
               Expanded(
                 flex: 1,

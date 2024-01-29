@@ -10,7 +10,7 @@ class PlayerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final playerController = Provider.of<PlayerController>(context);
+    final playerController = Provider.of<PlayerProvider>(context);
 
     double dynamicFontSizeCriterion = MediaQuery.of(context).size.height;
     var textStyle = const TextStyle(color: Colors.white);

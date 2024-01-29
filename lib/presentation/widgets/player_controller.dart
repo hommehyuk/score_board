@@ -5,7 +5,7 @@ enum PlayerType { blue, red }
 
 enum SetScoreType { set }
 
-class PlayerController extends ChangeNotifier {
+class PlayerProvider extends ChangeNotifier {
   final List<PlayerData> _playerDataList =
       List.generate(PlayerType.values.length, (index) => PlayerData(0, 0));
 
@@ -37,5 +37,15 @@ class PlayerController extends ChangeNotifier {
 
   TextEditingController getPlayerTextEditingController(PlayerType playerType) {
     return _playerDataList[playerType.index].textEditingController;
+  }
+
+  void resetData() {
+    for (int i = 0; i < PlayerType.values.length; i++) {
+      _playerDataList[i].score = 0;
+      _playerDataList[i].set = 0;
+      _playerDataList[i].textEditingController.clear();
+    }
+
+    notifyListeners();
   }
 }
