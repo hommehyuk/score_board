@@ -35,7 +35,7 @@ class PlayerWidget extends StatelessWidget {
                   .merge(TextStyle(fontSize: dynamicFontSizeCriterion * 0.035)),
               textAlign: TextAlign.center,
               decoration:
-                  const InputDecoration.collapsed(hintText: 'Player Name'),
+                  const InputDecoration.collapsed(hintText: 'Team Name'),
             ),
           ),
           Expanded(

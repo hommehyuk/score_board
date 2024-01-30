@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:score_board_app/presentation/widgets/control_section.dart';
-import 'package:score_board_app/presentation/widgets/player_controller.dart';
-import 'package:score_board_app/presentation/widgets/player_widget.dart';
-import 'package:score_board_app/presentation/widgets/score_widget.dart';
+import 'package:score_board_app/presentation/main/basketball_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -11,34 +8,58 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text('ScoreBoard'),
+        title: const Text('ScoreBoard'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.home),
+              iconColor: Colors.lightBlue,
+              focusColor: Colors.lightBlue,
+              title: const Text('홈'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainScreen(),
+                  ),
+                );
+              },
+              trailing: const Icon(Icons.navigate_next),
+            ),
+            ListTile(
+              leading: const Icon(Icons.sports_basketball),
+              iconColor: Colors.lightBlue,
+              focusColor: Colors.lightBlue,
+              title: const Text('농구'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BasketBallScreen(),
+                  ),
+                );
+              },
+              trailing: const Icon(Icons.navigate_next),
+            ),
+          ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height - 55,
-          child: Column(
-            children: [
-              Expanded(
-                flex: 1,
-                child: Row(children: <Widget>[
-                  Expanded(child: ControlSection()),
-                ]),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const BasketBallScreen(),
               ),
-              Expanded(
-                flex: 4,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(flex: 1, child: ScoreWidget(PlayerType.blue)),
-                    Expanded(flex: 2, child: PlayerWidget(PlayerType.blue)),
-                    Expanded(flex: 2, child: PlayerWidget(PlayerType.red)),
-                    Expanded(flex: 1, child: ScoreWidget(PlayerType.red)),
-                  ],
-                ),
-              ),
-            ],
+            );
+          },
+          icon: const Icon(
+            Icons.sports_basketball,
+            size: 50,
           ),
         ),
       ),
