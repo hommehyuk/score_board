@@ -46,22 +46,26 @@ class MainScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const BasketBallScreen(),
+      body: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BasketBallScreen(),
+                  ),
+                );
+              },
+              icon: Icon(
+                Icons.sports_basketball,
+                size: 50,
               ),
-            );
-          },
-          icon: const Icon(
-            Icons.sports_basketball,
-            size: 50,
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

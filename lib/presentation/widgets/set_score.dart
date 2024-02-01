@@ -14,8 +14,7 @@ class SetScore extends StatelessWidget {
 
     var textStyle = const TextStyle(color: Colors.white);
 
-    String setScoreDisplay =
-        (setScoreType == SetScoreType.set) ? 'Set' : 'Set';
+    String setScoreDisplay = (setScoreType == SetScoreType.set) ? 'Set' : 'Set';
     return Column(
       children: [
         Expanded(
@@ -54,7 +53,11 @@ class SetScore extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(child: FittedBox(child: Text(setScoreDisplay))),
+        Expanded(
+          child: FittedBox(
+            child: Text(setScoreDisplay),
+          ),
+        ),
       ],
     );
   }

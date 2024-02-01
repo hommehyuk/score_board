@@ -8,10 +8,10 @@ class ScoreUnitWidget extends StatelessWidget {
   final Color backgroundColor;
 
   const ScoreUnitWidget(
-    this.playerType,
-    this.varianceUnit,
-    this.backgroundColor,
-  );
+      this.playerType,
+      this.varianceUnit,
+      this.backgroundColor,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +46,11 @@ class ScoreUnitWidget extends StatelessWidget {
                       '-',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    onPressed: () =>
-                        c.changePlayerScore(playerType, -varianceUnit),
+                    onPressed: () {
+                      if (c.getPlayerScore(playerType) >= varianceUnit) {
+                        c.changePlayerScore(playerType, -varianceUnit);
+                      }
+                    },
                   ),
                 ),
               ),

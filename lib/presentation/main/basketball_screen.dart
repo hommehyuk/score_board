@@ -4,16 +4,20 @@ import 'package:score_board_app/presentation/widgets/player_controller.dart';
 import 'package:score_board_app/presentation/widgets/player_widget.dart';
 import 'package:score_board_app/presentation/widgets/score_widget.dart';
 
-class BasketBallScreen extends StatelessWidget {
+class BasketBallScreen extends StatefulWidget {
   const BasketBallScreen({super.key});
 
+  @override
+  State<BasketBallScreen> createState() => _BasketBallScreenState();
+}
+
+class _BasketBallScreenState extends State<BasketBallScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text('Basketball'),
-        ),
+        title: const Text('Basketball'),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: SizedBox(
