@@ -5,6 +5,8 @@ import 'package:score_board_app/presentation/widgets/player_controller.dart';
 import 'package:score_board_app/presentation/widgets/timer_controller.dart';
 
 class ControlSection extends StatelessWidget {
+  const ControlSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     TimerProvider timerProvider = Provider.of<TimerProvider>(context);
@@ -14,7 +16,7 @@ class ControlSection extends StatelessWidget {
       color: Colors.white,
       child: Row(
         children: [
-          Spacer(flex: 3),
+          const Spacer(flex: 3),
           Expanded(
             flex: 1,
             child: FittedBox(
@@ -29,12 +31,12 @@ class ControlSection extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(flex: 2),
+          const Spacer(flex: 2),
           Expanded(
             flex: 2,
             child: FittedBox(
               child: TextButton(
-                child: Text('-'),
+                child: const Text('-'),
                 onPressed: () => timerProvider.changeRemainingTime(-10000),
               ),
             ),
@@ -51,19 +53,19 @@ class ControlSection extends StatelessWidget {
             flex: 2,
             child: FittedBox(
               child: TextButton(
-                child: Text('+'),
+                child: const Text('+'),
                 onPressed: () => timerProvider.changeRemainingTime(10000),
               ),
             ),
           ),
-          Spacer(flex: 2),
+          const Spacer(flex: 2),
           Expanded(
             flex: 1,
             child: FittedBox(
               child: PlayOrPauseButton(),
             ),
           ),
-          Spacer(flex: 3),
+          const Spacer(flex: 3),
         ],
       ),
     );

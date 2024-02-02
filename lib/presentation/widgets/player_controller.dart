@@ -22,12 +22,10 @@ class PlayerProvider extends ChangeNotifier {
 
   void changeSetScore(
       PlayerType playerType, SetScoreType setScore, int pointVariance) {
-    if (setScore == SetScoreType.set) {
+    if (_playerDataList[playerType.index].set + pointVariance >= 0) {
       _playerDataList[playerType.index].set += pointVariance;
-    } else {
-      _playerDataList[playerType.index].set += pointVariance;
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   int getPlayerSetScore(PlayerType playerType, SetScoreType setScore) {

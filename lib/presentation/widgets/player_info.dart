@@ -6,15 +6,15 @@ import 'package:score_board_app/presentation/widgets/set_score.dart';
 class PlayerInfo extends StatelessWidget {
   final PlayerType playerType;
 
-  const PlayerInfo(this.playerType);
+  const PlayerInfo(this.playerType, {super.key});
 
   @override
   Widget build(BuildContext context) {
     final playerProvider = Provider.of<PlayerProvider>(context);
 
     double dynamicFontSizeCriterion = MediaQuery.of(context).size.height;
-    var textStyle = TextStyle(color: Colors.white);
-    Color bgColor = Colors.green;
+    var textStyle = const TextStyle(color: Colors.white);
+    Color bgColor = Colors.blue;
 
     if (playerType == PlayerType.red) {
       bgColor = Colors.red;
@@ -25,7 +25,7 @@ class PlayerInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Spacer(),
+          const Spacer(),
           Expanded(
             flex: 1,
             child: TextField(
@@ -34,7 +34,8 @@ class PlayerInfo extends StatelessWidget {
               style: textStyle
                   .merge(TextStyle(fontSize: dynamicFontSizeCriterion * 0.05)),
               textAlign: TextAlign.center,
-              decoration: InputDecoration.collapsed(hintText: 'Player Name'),
+              decoration:
+                  const InputDecoration.collapsed(hintText: 'Player Name'),
             ),
           ),
           Expanded(
@@ -46,7 +47,7 @@ class PlayerInfo extends StatelessWidget {
             ),
           ),
           Expanded(flex: 2, child: SetScore(playerType, SetScoreType.set)),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );
