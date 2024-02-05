@@ -43,7 +43,6 @@ class PlayerProvider extends ChangeNotifier {
     for (int i = 0; i < PlayerType.values.length; i++) {
       _playerDataList[i].score = 0;
       _playerDataList[i].set = 0;
-      _playerDataList[i].textEditingController.clear();
     }
     notifyListeners();
   }
