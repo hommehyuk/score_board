@@ -8,9 +8,15 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ScoreBoard'),
+        title: const Text(
+          'ScoreBoard',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.black,
       ),
       drawer: Drawer(
         child: ListView(
@@ -63,14 +69,14 @@ class MainScreen extends StatelessWidget {
                   ),
                 );
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.sports_basketball,
                 size: 100,
               ),
-              color: Colors.lightBlue,
+              color: Colors.brown,
             ),
             const SizedBox(height: 16),
-            Text(
+            const Text(
               'Tap on the basketball icon',
               style: TextStyle(
                 fontSize: 18,

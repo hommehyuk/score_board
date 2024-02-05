@@ -16,13 +16,18 @@ class _BasketBallScreenState extends State<BasketBallScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Basketball'),
+        backgroundColor: Colors.black,
+        title: const Text(
+          'Basketball',
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.of(context).size.height - 55,
-          child: Column(
+          child: const Column(
             children: [
               Expanded(
                 flex: 1,
@@ -30,7 +35,7 @@ class _BasketBallScreenState extends State<BasketBallScreen> {
                   Expanded(child: ControlSection()),
                 ]),
               ),
-              const Expanded(
+              Expanded(
                 flex: 4,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
