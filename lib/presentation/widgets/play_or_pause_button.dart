@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:score_board_app/presentation/widgets/timer_controller.dart';
+import 'package:score_board_app/domain/model/timer_item.dart';
 
 class PlayOrPauseButton extends StatelessWidget {
   @override

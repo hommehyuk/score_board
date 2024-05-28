@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:score_board_app/presentation/main/main_screen.dart';
-import 'package:score_board_app/presentation/widgets/player_controller.dart';
-import 'package:score_board_app/presentation/widgets/timer_controller.dart';
+import 'package:score_board_app/domain/model/player_item.dart';
+import 'package:score_board_app/domain/model/timer_item.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

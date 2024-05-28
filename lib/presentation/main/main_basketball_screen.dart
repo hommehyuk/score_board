@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:score_board_app/presentation/widgets/control_section.dart';
-import 'package:score_board_app/presentation/widgets/player_controller.dart';
+import 'package:score_board_app/presentation/widgets/control_section_widget.dart';
+import 'package:score_board_app/domain/model/player_item.dart';
 import 'package:score_board_app/presentation/widgets/player_widget.dart';
 import 'package:score_board_app/presentation/widgets/score_widget.dart';
 
@@ -32,7 +32,7 @@ class _BasketBallScreenState extends State<BasketBallScreen> {
               Expanded(
                 flex: 1,
                 child: Row(children: <Widget>[
-                  Expanded(child: ControlSection()),
+                  Expanded(child: ControlSectionWidget()),
                 ]),
               ),
               Expanded(

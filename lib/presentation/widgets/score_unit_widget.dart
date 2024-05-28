@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:score_board_app/presentation/widgets/player_controller.dart';
+import 'package:score_board_app/domain/model/player_item.dart';
 
 class ScoreUnitWidget extends StatelessWidget {
   final PlayerType playerType;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:score_board_app/presentation/widgets/play_or_pause_button.dart';
-import 'package:score_board_app/presentation/widgets/player_controller.dart';
-import 'package:score_board_app/presentation/widgets/timer_controller.dart';
+import 'package:score_board_app/domain/model/player_item.dart';
+import 'package:score_board_app/domain/model/timer_item.dart';
 
-class ControlSection extends StatelessWidget {
-  const ControlSection({super.key});
+class ControlSectionWidget extends StatelessWidget {
+  const ControlSectionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

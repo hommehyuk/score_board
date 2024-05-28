@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:score_board_app/presentation/main/basketball_screen.dart';
+import 'package:score_board_app/presentation/main/main_basketball_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);

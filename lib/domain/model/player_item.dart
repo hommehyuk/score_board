@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:score_board_app/domain/model/model.dart';
+import 'package:score_board_app/domain/repository/player_repository.dart';
 
 enum PlayerType { blue, red }
 
