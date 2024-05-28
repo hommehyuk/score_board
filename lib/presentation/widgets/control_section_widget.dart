@@ -36,7 +36,13 @@ class ControlSectionWidget extends StatelessWidget {
             flex: 2,
             child: FittedBox(
               child: TextButton(
-                child: const Text('-'),
+                child: const Text(
+                  '-',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.black,
+                  ),
+                ),
                 onPressed: () => timerProvider.changeRemainingTime(-10000),
               ),
             ),
@@ -53,7 +59,13 @@ class ControlSectionWidget extends StatelessWidget {
             flex: 2,
             child: FittedBox(
               child: TextButton(
-                child: const Text('+'),
+                child: const Text(
+                  '+',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.black,
+                  ),
+                ),
                 onPressed: () => timerProvider.changeRemainingTime(10000),
               ),
             ),
